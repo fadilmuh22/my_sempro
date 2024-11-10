@@ -1,0 +1,87 @@
+\chapter{Kajian Pustaka}
+
+\section{State of The Art}
+
+\vspace{-1cm}
+\begin{longtable}[t]
+{@{}
+  |>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{.25}}
+  |>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{.25}}
+  |>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{.25}}
+  |>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{.25}}|
+@{}}
+\endhead
+\endlastfoot
+
+\caption{State of The Art} \\
+
+\hline
+\textbf{Judul Penelitian} &
+\textbf{Metrik} &
+\textbf{Metode Penelitian} &
+\textbf{Hasil} 
+
+\\ \hline
+{A Real-time Face Recognition for Class Participation Enrollment System Over WebRTC} &
+{Akurasi deteksi wajah, ~Attendance reliability, performa Real-Time.} &
+{Implementasi pengenalan wajah berbasis WebRTC untuk sistem kehadiran kelas, dengan evaluasi akurasi dan kecepatan respons.} &
+{Sistem terbukti efektif untuk mencatat kehadiran kehadiran siswa dan dapat memotivasi siswa untuk hadir di kelas.} 
+
+\\ \hline
+{Real Time Face Detection and Facial Expression Recognition: Development and Applications to Human Computer Interaction.} &
+{Akurasi deteksi wajah, performa Real-Time.} &
+{Deteksi wajah dengan cascade fitur dan pengenalan ekspresi menggunakan Gabor-SVM, diuji pada dataset Cohn-Kanade.} &
+{Mencapai akurasi 93\% dalam deteksi ekspresi real-time dan telah diimplementasikan di berbagai platform untuk interaksi manusia-mesin.}
+
+\\ \hline
+{Real time Face Detection and Optimal Face Mapping for Online Classes} &
+{Akurasi deteksi wajah, ~Attendance reliability, Real-Time Performance.} &
+{Perbandingan algoritma Local Binary Pattern Histogram (LBPH) dan Convolutional Neural Network (CNN) untuk pengenalan wajah serta Haar Cascade untuk deteksi wajah.} &
+{Algoritma CNN memiliki akurasi 95\%, lebih tinggi dibandingkan LBPH (78\%), menunjukkan keunggulan untuk kehadiran real-time dalam kelas online.}
+
+\\ \hline
+{Web Application Development for Biometric Identification System Based on Neural Network Face Recognition} &
+{Akurasi deteksi wajah, System Response.} &
+{Pengembangan aplikasi web berbasis neural network untuk identifikasi wajah dengan arsitektur MVC dan pengujian performa modul.} &
+{Kompleks identifikasi biometrik berhasil diterapkan di lingkungan keamanan seperti bandara dengan akurasi tinggi.} 
+
+\\ \hline
+{Web Front-End Realtime Face Recognition Based on TFJS} &
+{Latency, Kecepatan deteksi wajah.} &
+{Implementasi pengenalan wajah di browser menggunakan TensorFlow.js dan pengujian pada berbagai skenario untuk mengurangi beban server.} &
+{Sistem pengenalan wajah Real-Time di sisi Client berhasil menurunkan latensi dan beban Server, menunjukkan respons yang dapat diterima pengguna.} 
+
+\\ \hline
+{Web Performance Optimization Techniques for Biodiversity Resource Portal} &
+{Efficiency Score, Load Lime, Page Rank, End-to-End Performance Indicators.} &
+{Analisis sebelum dan pasca-optimasi menggunakan teknik Web Performance Optimization (WPO), dinilai dengan GTmetrix.} &
+{Peningkatan signifikan dalam performa portal, dari Grade F (13\%) menjadi Grade B (82\%) setelah optimasi.}
+
+\\ \hline
+{WebSocket in real time application} &
+{Latency, Efficiency, Data Transmission Reliability } &
+{Analisis performa WebSocket dibandingkan dengan HTTP
+long polling dan server-sent events untuk aplikasi real-time.} &
+{WebSocket memberikan performa yang lebih baik dalam latensi dan efisiensi jaringan, mendukung pertukaran data dua arah yang lebih halus untuk aplikasi real-time.} 
+
+\\ \hline
+{PROPOSED} &
+{Memory Usage, System Responses, Real-Time Performance.} &
+{Uji coba aplikasi dan web server pada aplikasi web virtual meeting untuk menguji performa.} &
+{Menganalisis cara meengoptimalkan kecepatan, keakuratan, dan efektivitas sistem analisis ekspresi wajah berbasis face recognition dan socket communication} 
+
+\end{longtable}
+
+\newpage
+
+\section{Deteksi Ekspresi}
+{Deteksi ekspresi wajah adalah proses analisis dan interpretasi ekspresi wajah manusia melalui perangkat lunak untuk mengenali emosi, seperti senang, sedih, bingung, dan fokus. Teknologi ini sering didasarkan pada face recognition yang mengidentifikasi fitur-fitur wajah melalui berbagai teknik seperti pengenalan pola, analisis tekstur, dan deep learning }{(Archana et al., 2022)}{. Dalam aplikasi pengajaran berbasis real-time, deteksi ekspresi wajah memungkinkan pengajar untuk memahami respons siswa dengan cepat, mendukung interaksi yang lebih responsif dan efektif dalam pembelajaran }{(Archana et al., 2022)}{.}
+
+\section{Socket Communication}
+{Socket communication adalah metode yang digunakan untuk memungkinkan transfer data secara real-time antara client dan server. Teknologi ini memanfaatkan protokol TCP/IP atau WebSocket untuk mempertahankan koneksi yang persisten, memungkinkan aplikasi untuk mengirim dan menerima data secara cepat dan efisien. Dalam konteks aplikasi pengajaran berbasis real-time, socket communication berperan penting untuk memastikan bahwa data terkait ekspresi wajah siswa dapat dikirimkan secara Real-Time ke server dan disampaikan kepada pengajar yang memungkinkan minimnya Latency dan Network Traffic di sistem }{(Ogundeyi \& Yinka-Banjo, 2019)}{.}
+
+\section{Ekstensi Pramban}
+{Ekstensi pramban web adalah aplikasi kecil yang dapat ditambahkan ke peramban untuk memberikan fungsi tambahan atau mengubah perilaku halaman web tertentu }{(Jin et al., 2024)}{. Ekstensi ini memungkinkan fitur khusus seperti integrasi face recognition, yang berjalan di sisi pengguna untuk memproses data visual secara langsung tanpa memerlukan pengiriman seluruh data gambar ke server. Ekstensi pramban untuk pengajaran dapat mengumpulkan data ekspresi wajah siswa secara otomatis dan mengirimkannya ke server melalui socket communication, menjaga interaksi tetap real-time dan membantu pengajar menilai kondisi siswa lebih akurat.}
+
+\section{Performance Testing}
+{Performance testing adalah serangkaian proses pengujian untuk mengukur stabilitas, kecepatan, dan efisiensi aplikasi dalam berbagai kondisi operasional }{(Jin et al., 2024)}{. Dalam aplikasi real-time yang menggunakan socket communication dan face recognition, performance testing penting untuk memastikan bahwa pengiriman data, pemrosesan gambar, dan penyampaian hasil tetap cepat dan responsif. Pengujian ini juga berguna untuk mengidentifikasi potensi bottleneck dalam aliran data dan meningkatkan pengoptimalan sistem agar mampu menangani beban pemrosesan dalam situasi penggunaan yang intensif.}
