@@ -166,30 +166,38 @@
 % Mengubah gaya penulisan setiap judul subsubsubbab
 \titleformat*{\subsubsection}{\normalfont}
 
-\usepackage{hyperref}
-\usepackage{apacite}
+\usepackage[hidelinks]{hyperref}
 \usepackage{url}
+
+\usepackage[bahasa]{babel}
+
+\usepackage[
+babel=other,
+backend=biber,
+style=ext-authoryear,
+maxcitenames=2
+]{biblatex}
+
+\addbibresource{references.bib}
 % ----------------------------------------
 % CITING
 % ----------------------------------------
 % Mengubah format sitasi
 % ke gaya APA
-\bibliographystyle{apacite}
+% \bibliographystyle{apacite}
 % Mengubah akronim dalam Bahasa Inggris
 % ke Bahasa Indonesia
-\renewcommand{\BBA}[1]{\&}
-\renewcommand{\BBAA}[1]{\&}
-\renewcommand{\BBAB}[1]{\&}
-\renewcommand{\BOthers}[1]{dkk.}
-\renewcommand{\BOthersPeriod}[1]{dkk.}
+% \renewcommand{\BBA}[1]{\&}
+% \renewcommand{\BBAA}[1]{\&}
+% \renewcommand{\BBAB}[1]{\&}
+% \renewcommand{\BOthers}[1]{dkk.}
+% \renewcommand{\BOthersPeriod}[1]{dkk.}
 
 \usepackage[acronym]{glossaries}
 % ----------------------------------------
 % Glosarium
 % ----------------------------------------
 % \include{glosarium}
-
-\usepackage[english,bahasa]{babel}
 % ----------------------------------------
 % NAMING
 % ----------------------------------------
@@ -411,7 +419,7 @@ Komputer pada Program Studi Rekayasa Perangkat Lunak}
 \usepackage{afterpage}
 \usepackage{blindtext}
 \usepackage{longtable, booktabs}
-\usepackage{microtype}
+\usepackage[nopatch=footnote]{microtype}
 \usepackage{calc}
 \usepackage{array}
 \usepackage{pdflscape}
