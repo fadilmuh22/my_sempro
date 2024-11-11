@@ -1,4 +1,8 @@
 {
+  "editor.formatOnSave": true,
+  "latex-workshop.formatting.latex": "tex-fmt",
+  "latex-workshop.intellisense.citation.backend": "biblatex",
+  "latex-workshop.latex.outDir": "%DIR%/build",
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
@@ -66,5 +70,11 @@
       "args": ["%DOCFILE%"],
       "env": {}
     }
-  ]
+  ],
+  "[tex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  }
 }

@@ -45,12 +45,12 @@
 % LAYOUTING
 % ----------------------------------------
 \geometry{
-	a4paper, % paper size
-	left=4cm, % margin left
-	top=3cm, % margin top
-	right=3cm, % margin right
-	bottom=3cm, % margin bottom
-	includeheadfoot,
+  a4paper, % paper size
+  left=4cm, % margin left
+  top=3cm, % margin top
+  right=3cm, % margin right
+  bottom=3cm, % margin bottom
+  includeheadfoot,
 }
 
 \usepackage{titlesec}
@@ -87,16 +87,16 @@
 % khusus halaman indeks
 % ke angka romawi
 \def\frontmatter{
-	\pagenumbering{roman}
-	\thispagestyle{plain}
+  \pagenumbering{roman}
+  \thispagestyle{plain}
 }
 % Mendefinisikan penomoran halaman
 % khusus selain halaman indeks
 % ke angka arab
 \def\mainmatter{
-	\pagenumbering{arabic}
-	\setcounter{page}{1}
-	\thispagestyle{plain}
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+  \thispagestyle{plain}
 }
 % Menambahkan prefiks "BAB" untuk setiap bab
 % di daftar isi
@@ -142,11 +142,11 @@
 % Mengubah gaya penulisan keterangan
 % untuk tabel
 \captionsetup[table]{labelformat=simple,labelsep=space,
-	textfont=it,justification=centering}
+textfont=it,justification=centering}
 % Mengubah gaya penulisan keterangan
 % untuk gambar
 \captionsetup[figure]{labelformat=simple,labelsep=space,
-	justification=centering}
+justification=centering}
 
 \usepackage{tocloft,etoolbox}
 
@@ -171,12 +171,13 @@
 \usepackage{url}
 
 \usepackage[bahasa]{babel}
+\usepackage{csquotes}
 
 \usepackage[
-	babel=other,
-	backend=biber,
-	style=ext-authoryear,
-	maxcitenames=2
+  autolang=other,
+  backend=biber,
+  style=ext-authoryear,
+  maxcitenames=2
 ]{biblatex}
 
 % ----------------------------------------
@@ -202,20 +203,20 @@
 % NAMING
 % ----------------------------------------
 \def\captionsbahasa{
-	%   \def\prefacename{KATA PENGANTAR}
-	%   \def\statementname{PERNYATAAN}
-	%   \def\abstractname{ABSTRAK}
-	\def\contentsname{DAFTAR ISI}
-	\def\listtablename{DAFTAR TABEL}
-	\def\listfigurename{DAFTAR GAMBAR}
-	% \def\listappendixname{DAFTAR LAMPIRAN}
-	% \def\nomenclaturename{DAFTAR SINGKATAN}
-	\def\chaptername{BAB}
-	\def\refname{DAFTAR PUSTAKA}
-	\def\bibname{DAFTAR PUSTAKA}
-	\def\appendixname{LAMPIRAN}
-	\def\figurename{Gambar}
-	\def\tablename{Tabel}
+  %   \def\prefacename{KATA PENGANTAR}
+  %   \def\statementname{PERNYATAAN}
+  %   \def\abstractname{ABSTRAK}
+  \def\contentsname{DAFTAR ISI}
+  \def\listtablename{DAFTAR TABEL}
+  \def\listfigurename{DAFTAR GAMBAR}
+  % \def\listappendixname{DAFTAR LAMPIRAN}
+  % \def\nomenclaturename{DAFTAR SINGKATAN}
+  \def\chaptername{BAB}
+  \def\refname{DAFTAR PUSTAKA}
+  \def\bibname{DAFTAR PUSTAKA}
+  \def\appendixname{LAMPIRAN}
+  \def\figurename{Gambar}
+  \def\tablename{Tabel}
 }
 
 \usepackage{setspace}
@@ -224,101 +225,101 @@
 % TEMPLAT HALAMAN JUDUL
 % ----------------------------------------
 \def\cover{
-	\thispagestyle{empty}
-	\begin{center}
-		\begin{singlespace}
-			\textbf{\MakeUppercase{\@title}}\par\nobreak
-			\vspace{1.5cm}
-			\textbf{PROPOSAL TUGAS AKHIR}\\
-			\vspace{1.5cm}
-			% diajukan untuk memenuhi sebagian dari\\
-			% syarat memperoleh gelar Sarjana \@degree\\
-			% \@program\\
-			{dijakukan untuk memenuhi sebagai syarat untuk meperoleh gelar Sarjana
-				Komputer pada Program Studi Rekayasa Perangkat Lunak}
-			\vfill
-			\includegraphics[
-				width=3.5cm,
-				height=3.5cm,
-				keepaspectratio,
-			]{images/logo.png}
-			\vfill
-			Oleh\\
-			\@author\\
-			\@studentid\\
-			\vspace{1.5cm}
-			\textbf{
-			\MakeUppercase{\@program}\\
-			% \MakeUppercase{\@department}\\
-			% \MakeUppercase{\@faculty}\\
-			{\MakeUppercase{\@faculty}}\\
-			\MakeUppercase{\@university}\\
-			% \MakeUppercase{\@city}\\
-			\MakeUppercase{\@yearsubmit}
-			}\par\nobreak
-		\end{singlespace}
-	\end{center}
-	\pagebreak
+  \thispagestyle{empty}
+  \begin{center}
+    \begin{singlespace}
+      \textbf{\MakeUppercase{\@title}}\par\nobreak
+      \vspace{1.5cm}
+      \textbf{PROPOSAL TUGAS AKHIR}\\
+      \vspace{1.5cm}
+      % diajukan untuk memenuhi sebagian dari\\
+      % syarat memperoleh gelar Sarjana \@degree\\
+      % \@program\\
+      {dijakukan untuk memenuhi sebagai syarat untuk meperoleh gelar Sarjana
+      Komputer pada Program Studi Rekayasa Perangkat Lunak}
+      \vfill
+      \includegraphics[
+        width=3.5cm,
+        height=3.5cm,
+        keepaspectratio,
+      ]{images/logo.png}
+      \vfill
+      Oleh\\
+      \@author\\
+      \@studentid\\
+      \vspace{1.5cm}
+      \textbf{
+        \MakeUppercase{\@program}\\
+        % \MakeUppercase{\@department}\\
+        % \MakeUppercase{\@faculty}\\
+        {\MakeUppercase{\@faculty}}\\
+        \MakeUppercase{\@university}\\
+        % \MakeUppercase{\@city}\\
+        \MakeUppercase{\@yearsubmit}
+      }\par\nobreak
+    \end{singlespace}
+  \end{center}
+  \pagebreak
 }
 
 % ----------------------------------------
 % TEMPLAT HALAMAN HAK CIPTA
 % ----------------------------------------
 \def\copyright{
-	\begin{center}
-		\begin{singlespace}
-			\MakeUppercase{\@title}\par\nobreak
-			\vfill
-			Oleh\\
-			\@author\\
-			\@studentid\\
-			\vfill
-			Sebuah skripsi yang diajukan untuk memenuhi sebagian dari
-			syarat memperoleh gelar Sarjana \@degree\ \@program\ di \@faculty\\
-			\vfill
-			\textcopyright\ \@author\ \@yearsubmit\\
-			\@university\\
-			\@monthsubmit\ \@yearsubmit\\
-			\vfill
-			Hak Cipta Dilindungi Undang-Undang\\
-			Skripsi ini boleh diperbanyak seluruhnya atau sebagian, dengan dicetak ulang, difotokopi atau cara lainnya tanpa izin dari penulis dengan tetap mencantumkan halaman ini apa adanya
-		\end{singlespace}
-	\end{center}
-	\pagebreak
+  \begin{center}
+    \begin{singlespace}
+      \MakeUppercase{\@title}\par\nobreak
+      \vfill
+      Oleh\\
+      \@author\\
+      \@studentid\\
+      \vfill
+      Sebuah skripsi yang diajukan untuk memenuhi sebagian dari
+      syarat memperoleh gelar Sarjana \@degree\ \@program\ di \@faculty\\
+      \vfill
+      \textcopyright\ \@author\ \@yearsubmit\\
+      \@university\\
+      \@monthsubmit\ \@yearsubmit\\
+      \vfill
+      Hak Cipta Dilindungi Undang-Undang\\
+      Skripsi ini boleh diperbanyak seluruhnya atau sebagian, dengan dicetak ulang, difotokopi atau cara lainnya tanpa izin dari penulis dengan tetap mencantumkan halaman ini apa adanya
+    \end{singlespace}
+  \end{center}
+  \pagebreak
 }
 
 % ----------------------------------------
 % TEMPLAT HALAMAN PENGESAHAN
 % ----------------------------------------
 \def\approval{
-	\begin{center}
-		\begin{singlespace}
-			\MakeUppercase{\@author}\\
-			\@studentid\\
-			\vfill
-			\MakeUppercase{\@title}\\
-			\vfill
-			disetujui dan disahkan oleh pembimbing:\\
-			\vfill
-			Pembimbing I,\\
-			\vspace{2.0cm}
-			\underline{\@firstsupervisorname}\\
-			NIP. \@firstsupervisorid\\
-			\vfill
-			Pembimbing II,\\
-			\vspace{2.0cm}
-			\underline{\@secondsupervisorname}\\
-			NIP. \@secondsupervisorid\\
-			\vfill
-			Mengetahui,\\
-			Ketua \@department\\
-			\vspace{2.0cm}
-			\underline{\@departmentheadname}\\
-			NIP. \@departmentheadid\\
-		\end{singlespace}
-	\end{center}
-	\addcontentsline{toc}{chapter}{HALAMAN PENGESAHAN}
-	\pagebreak
+  \begin{center}
+    \begin{singlespace}
+      \MakeUppercase{\@author}\\
+      \@studentid\\
+      \vfill
+      \MakeUppercase{\@title}\\
+      \vfill
+      disetujui dan disahkan oleh pembimbing:\\
+      \vfill
+      Pembimbing I,\\
+      \vspace{2.0cm}
+      \underline{\@firstsupervisorname}\\
+      NIP. \@firstsupervisorid\\
+      \vfill
+      Pembimbing II,\\
+      \vspace{2.0cm}
+      \underline{\@secondsupervisorname}\\
+      NIP. \@secondsupervisorid\\
+      \vfill
+      Mengetahui,\\
+      Ketua \@department\\
+      \vspace{2.0cm}
+      \underline{\@departmentheadname}\\
+      NIP. \@departmentheadid\\
+    \end{singlespace}
+  \end{center}
+  \addcontentsline{toc}{chapter}{HALAMAN PENGESAHAN}
+  \pagebreak
 }
 
 % ----------------------------------------
@@ -326,16 +327,16 @@
 % BEBAS PLAGIARISME
 % ----------------------------------------
 \def\statement{
-	\chapter*{\statementname}
-	\@statementcontent\\
-	\begin{flushright}
-		\@city, \@monthsubmit\ \@yearsubmit\\
-		Yang membuat pernyataan,\\
-		\vspace{2.0cm}
-		\@author
-	\end{flushright}
-	\addcontentsline{toc}{chapter}{HALAMAN PERNYATAAN}
-	\pagebreak
+  \chapter*{\statementname}
+  \@statementcontent\\
+  \begin{flushright}
+    \@city, \@monthsubmit\ \@yearsubmit\\
+    Yang membuat pernyataan,\\
+    \vspace{2.0cm}
+    \@author
+  \end{flushright}
+  \addcontentsline{toc}{chapter}{HALAMAN PERNYATAAN}
+  \pagebreak
 }
 
 % ----------------------------------------
@@ -343,76 +344,76 @@
 % PERSEMBAHAN
 % ----------------------------------------
 \def\acknowledgment{
-	\null
-	\vfill
-	\begin{flushright}
-		\textit{\@acknowledgmentcontent}
-	\end{flushright}
-	\addcontentsline{toc}{chapter}{HALAMAN PERSEMBAHAN}
-	\pagebreak
+  \null
+  \vfill
+  \begin{flushright}
+    \textit{\@acknowledgmentcontent}
+  \end{flushright}
+  \addcontentsline{toc}{chapter}{HALAMAN PERSEMBAHAN}
+  \pagebreak
 }
 
 % ----------------------------------------
 % TEMPLAT KATA PENGANTAR
 % ----------------------------------------
 \def\preface{
-	\chapter*{\prefacename}
-	\textnormal{\noindent \@prefacecontent}\\
-	\begin{flushright}
-		\@city, \@monthsubmit\ \@yearsubmit\\
-		\vspace{2.0cm}
-		Penulis
-	\end{flushright}
-	\addcontentsline{toc}{chapter}{\prefacename}
-	\pagebreak
+  \chapter*{\prefacename}
+  \textnormal{\noindent \@prefacecontent}\\
+  \begin{flushright}
+    \@city, \@monthsubmit\ \@yearsubmit\\
+    \vspace{2.0cm}
+    Penulis
+  \end{flushright}
+  \addcontentsline{toc}{chapter}{\prefacename}
+  \pagebreak
 }
 
 % ----------------------------------------
 % TEMPLAT ABSTRAK
 % ----------------------------------------
 \def\abstract{
-	\begingroup
-	\begin{center}
-		\begin{singlespace}
-			\MakeUppercase{\@title}\\
-			\vspace{1.5cm}
-			Oleh\\
-			\@author\\
-			\@studentid
-		\end{singlespace}
-	\end{center}
-	\vspace{2.5cm}
-	\renewcommand{\cleardoublepage}{}
-	\renewcommand{\clearpage}{}
-	\chapter*{\abstractname}
-	\begin{singlespace}
-		\fontsize{11pt}{12pt}\textnormal{\noindent \@abstractcontent\\\\
-			Kata kunci: \@abstractkeywords}
-	\end{singlespace}
-	\addcontentsline{toc}{chapter}{\abstractname}
-	\endgroup
-	\pagebreak
-	\begingroup
-	\selectlanguage{english}
-	\begin{center}
-		\begin{singlespace}
-			\textit{\MakeUppercase{\@titleen}}\\
-			\vspace{1.5cm}
-			\textit{Arranged by}\\
-			\textit{\@author}\\
-			\textit{\@studentid}
-		\end{singlespace}
-	\end{center}
-	\vspace{2.5cm}
-	\renewcommand{\cleardoublepage}{}
-	\renewcommand{\clearpage}{}
-	\chapter*{\textit{\abstractname}}
-	\begin{singlespace}
-		\fontsize{11pt}{12pt}\textit{\noindent \@abstractencontent\\\\
-			Keywords: \@abstractenkeywords}
-	\end{singlespace}
-	\endgroup
-	\pagebreak
+  \begingroup
+  \begin{center}
+    \begin{singlespace}
+      \MakeUppercase{\@title}\\
+      \vspace{1.5cm}
+      Oleh\\
+      \@author\\
+      \@studentid
+    \end{singlespace}
+  \end{center}
+  \vspace{2.5cm}
+  \renewcommand{\cleardoublepage}{}
+  \renewcommand{\clearpage}{}
+  \chapter*{\abstractname}
+  \begin{singlespace}
+    \fontsize{11pt}{12pt}\textnormal{\noindent \@abstractcontent\\\\
+    Kata kunci: \@abstractkeywords}
+  \end{singlespace}
+  \addcontentsline{toc}{chapter}{\abstractname}
+  \endgroup
+  \pagebreak
+  \begingroup
+  \selectlanguage{english}
+  \begin{center}
+    \begin{singlespace}
+      \textit{\MakeUppercase{\@titleen}}\\
+      \vspace{1.5cm}
+      \textit{Arranged by}\\
+      \textit{\@author}\\
+      \textit{\@studentid}
+    \end{singlespace}
+  \end{center}
+  \vspace{2.5cm}
+  \renewcommand{\cleardoublepage}{}
+  \renewcommand{\clearpage}{}
+  \chapter*{\textit{\abstractname}}
+  \begin{singlespace}
+    \fontsize{11pt}{12pt}\textit{\noindent \@abstractencontent\\\\
+    Keywords: \@abstractenkeywords}
+  \end{singlespace}
+  \endgroup
+  \pagebreak
 }
 
 % Silakan muat paket-paket lain di sini

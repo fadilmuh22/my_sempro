@@ -10,7 +10,7 @@ sudo apt install texlive-full
 
 It will install all latex packages in your system. roughly 4GB of data will be downloaded and 7gb installed.
 
-### Step 1 (alternative): Install latex
+### Step 1 (alternative): Install necessary package
 
 ```bash
 sudo apt install texlive-latex-extra texlive-extra-utils latexmk texlive-lang-other
@@ -19,9 +19,34 @@ sudo apt install texlive-latex-extra texlive-extra-utils latexmk texlive-lang-ot
 It will install necessary package to run this project.
 And also install Bahasa Indonesia language package.
 
+Optional install tex-fmt
+
+```bash
+cargo install tex-fmt
+```
+
 ### Step 2: Install LaTex Workshop in vscode
 
 Open vscode and install LaTex Workshop extension.
+
+### Step 3: Run add-lib
+
+```bash
+make add-lib
+```
+
+It will copy biblatex file for citation with Bahasa Indonesia
+
+### Step 4: Run the project
+
+```
+make
+```
+
+### Step 4 (alternative): Run via vscode
+
+Open `main.tex` file and save the file to build the project.
+Or you can run `LaTex Workshop: Build with recipe and choose latexmk` in vscode command.
 
 ## Working on with this project
 
