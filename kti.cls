@@ -95,7 +95,7 @@
 \def\mainmatter{
   \pagenumbering{arabic}
   \setcounter{page}{1}
-  \pagestyle{myheadings}
+  \thispagestyle{plain}
 }
 % Menambahkan prefiks "BAB" untuk setiap bab
 % di daftar isi
