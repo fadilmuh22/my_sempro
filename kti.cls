@@ -170,7 +170,7 @@ justification=centering}
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
 
-\usepackage[bahasa]{babel}
+\usepackage[bahasa, USenglish]{babel}
 \usepackage{csquotes}
 
 \usepackage[
@@ -424,7 +424,7 @@ justification=centering}
 \usepackage{calc}
 \usepackage{array}
 \usepackage{pdflscape}
-\usepackage{gensymb}
+\usepackage{textcomp, gensymb}
 \usepackage{amsmath}
 \usepackage{float}
 \usepackage{relsize}
