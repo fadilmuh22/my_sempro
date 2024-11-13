@@ -96,7 +96,7 @@
 \def\mainmatter{
   \pagenumbering{arabic}
   \setcounter{page}{1}
-  \thispagestyle{plain}
+  \pagestyle{myheadings}
 }
 % Menambahkan prefiks "BAB" untuk setiap bab
 % di daftar isi
@@ -234,7 +234,7 @@ justification=centering}
       % diajukan untuk memenuhi sebagian dari\\
       % syarat memperoleh gelar Sarjana \@degree\\
       % \@program\\
-      {dijakukan untuk memenuhi sebagai syarat untuk meperoleh gelar Sarjana
+      \textit{dijakukan untuk memenuhi sebagai syarat untuk meperoleh gelar Sarjana
       Komputer pada Program Studi Rekayasa Perangkat Lunak}
       \vfill
       \includegraphics[
