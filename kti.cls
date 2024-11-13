@@ -170,8 +170,7 @@ justification=centering}
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
 
-\usepackage[bahasa, USenglish]{babel}
-\usepackage{csquotes}
+\usepackage[bahasa]{babel}
 
 \usepackage[
   autolang=other,
