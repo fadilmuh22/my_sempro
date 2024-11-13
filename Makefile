@@ -14,10 +14,10 @@ clean:
 build-latex:
 	latexmk ${DEFAULT_ARGS}
 
-copy-pdf:
-	cp ./${OUTPUT_DIR}/${FILE_NAME}.pdf ./${FILE_NAME}.pdf
+link-pdf:
+	if [ ! -L ./${FILE_NAME}.pdf ]; then ln -s ./${OUTPUT_DIR}/${FILE_NAME}.pdf ./${FILE_NAME}.pdf; fi
 
-all: clean build-latex copy-pdf
+all: clean build-latex link-pdf
 
 default: all
 
