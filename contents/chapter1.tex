@@ -1,27 +1,40 @@
 \chapter{Pendahuluan}
 \section{Latar Belakang}
-\qquad Kemajuan teknologi informasi saat ini memungkinkan pengembangan berbagai inovasi dalam bidang pendidikan, termasuk implementasi teknologi berbasis AI untuk meningkatkan interaktivitas dan efektivitas pengajaran. Salah satu aspek penting dalam proses pembelajaran adalah kemampuan seorang pendidik untuk memahami keadaan emosional siswa, yang kerap tercermin melalui ekspresi wajah. Kemampuan ini, jika dapat diukur secara otomatis dan real-time, dapat membantu pendidik dalam menyesuaikan metode pengajaran dan menciptakan suasana belajar yang lebih kondusif.
+\qquad Kemajuan teknologi informasi saat ini memungkinkan pengembangan berbagai inovasi dalam bidang pendidikan, termasuk implementasi teknologi berbasis AI untuk meningkatkan interaktivitas dan efektivitas pengajaran.
+Salah satu aspek penting dalam proses pembelajaran adalah kemampuan seorang pendidik untuk memahami keadaan emosional siswa, yang kerap tercermin melalui ekspresi wajah.
+Kemampuan ini, jika dapat diukur secara otomatis dan real-time, dapat membantu pendidik dalam menyesuaikan metode pengajaran dan menciptakan suasana belajar yang lebih kondusif.
 
-Aplikasi berbasis Face Recognition dan analisis ekspresi wajah menjadi relevan untuk mengatasi tantangan ini. Teknologi ini memungkinkan sistem untuk mengidentifikasi ekspresi wajah siswa, seperti senang, sedih, atau bingung, yanlg kemudian dapat disampaikan kepada pendidik sebagai indikator untuk menilai suasana kelas secara keseluruhan. Penggunaan komunikasi socket dalam sistem ini, yang memungkinkan transfer data secara langsung dan berkesinambungan antara klien dan server, memfasilitasi proses analisis ekspresi wajah secara real-time dan memastikan data tersampaikan dengan cepat dan akurat \parencite{ogundeyiWebSocketRealTime2019}.
+Aplikasi berbasis Face Recognition dan analisis ekspresi wajah menjadi relevan untuk mengatasi tantangan ini.
+Teknologi ini memungkinkan sistem untuk mengidentifikasi ekspresi wajah siswa, seperti senang, sedih, atau bingung, yanlg kemudian dapat disampaikan kepada pendidik sebagai indikator untuk menilai suasana kelas secara keseluruhan.
+Penggunaan komunikasi socket dalam sistem ini, yang memungkinkan transfer data secara langsung dan berkesinambungan antara klien dan server, memfasilitasi proses analisis ekspresi wajah secara real-time dan memastikan data tersampaikan dengan cepat dan akurat \parencite{ogundeyiWebSocketRealTime2019}.
 
-Aplikasi pengajaran terpadu yang bernama Emodu yang menggunakan teknologi canggih untuk meningkatkan pengalaman belajar mengajar. Tech stack yang digunakan dalam pengembangan Emodu meliputi backend dengan NestJS yang berfungsi sebagai bagian utama untuk mengolah data, dan CMS panel dengan Next.js yang memungkinkan siswa dan guru untuk melakukan registrasi. Guru dapat membuat kelas yang nantinya akan diikuti oleh siswa menggunakan kode unik yang tergenerate. Dalam kelas tersebut, guru dapat melihat data emosi siswa secara real-time.
+Aplikasi pengajaran terpadu yang bernama Emodu yang menggunakan teknologi canggih untuk meningkatkan pengalaman belajar mengajar.
+Tech stack yang digunakan dalam pengembangan Emodu meliputi backend dengan NestJS yang berfungsi sebagai bagian utama untuk mengolah data, dan CMS panel dengan Next.js yang memungkinkan siswa dan guru untuk melakukan registrasi.
+Guru dapat membuat kelas yang nantinya akan diikuti oleh siswa menggunakan kode unik yang tergenerate.
+Dalam kelas tersebut, guru dapat melihat data emosi siswa secara real-time.
 
-Penelitian ini berfokus untuk menganalisis dan mengoptimalkan sistem aplikasi Emodu sehingga dapat meningkatkan performa aplikasi. Penggunaan socket communication harus dioptimalkan agar dapat menangani lalu lintas data yang besar dengan latensi rendah. Di sisi lain, algoritma analisis ekspresi wajah harus dapat berjalan secara efisien tanpa membebani perangkat pengguna. Dengan demikian, hasil analisis dapat diberikan secara real-time dan gangguan teknis yang dapat mengurangi efektivitas pengajaran dapat diminimalkan.
+Penelitian ini berfokus pada perancangan dan implementasi arsitektur infrastruktur yang tangguh untuk aplikasi EMODU di platform Google Cloud Platform (GCP).
+Seiring dengan potensi pertumbuhan pengguna, diperlukan sebuah fondasi infrastruktur yang tidak hanya stabil, tetapi juga mampu beradaptasi secara dinamis.
+Oleh karena itu, penelitian ini akan merancang sebuah arsitektur yang mengedepankan tiga pilar utama: skalabilitas otomatis (\textit{auto-scalability}) untuk menangani lonjakan beban pengguna tanpa intervensi manual, pemulihan dari kegagalan (\textit{failure recovery}) untuk memastikan layanan tetap berjalan meskipun terjadi masalah pada salah satu komponen, dan penerapan tanpa henti (\textit{zero-downtime deployment}) yang memungkinkan pembaruan sistem dilakukan tanpa mengganggu aktivitas pengguna.
+Dengan menerapkan prinsip-prinsip ini, penelitian bertujuan untuk membangun sebuah sistem yang memiliki ketersediaan tinggi (\textit{high availability}) dan dapat diandalkan untuk mendukung proses belajar mengajar secara berkelanjutan.
 
-Inti dari aplikasi Emodu adalah sebuah ekstensi Google Chrome yang memungkinkan siswa atau peserta meeting untuk join class dan melakukan rekognisi wajah menggunakan library face-api.js yang dijalankan di client. Teknologi face recognition ini memungkinkan sistem untuk mengidentifikasi ekspresi wajah siswa, seperti senang, sedih, atau bingung, yang kemudian dapat disampaikan kepada pendidik sebagai indikator untuk menilai suasana kelas secara keseluruhan. Penggunaan komunikasi socket dalam sistem ini memungkinkan transfer data secara langsung dan berkesinambungan antara klien dan server, memfasilitasi proses analisis ekspresi wajah secara real-time dan memastikan data tersampaikan dengan cepat dan akurat.
+Inti dari aplikasi Emodu adalah sebuah ekstensi Google Chrome yang memungkinkan siswa atau peserta meeting untuk join class dan melakukan rekognisi wajah menggunakan library face-api.js yang dijalankan di client.
+Teknologi face recognition ini memungkinkan sistem untuk mengidentifikasi ekspresi wajah siswa, seperti senang, sedih, atau bingung, yang kemudian dapat disampaikan kepada pendidik sebagai indikator untuk menilai suasana kelas secara keseluruhan.
+Penggunaan komunikasi socket dalam sistem ini memungkinkan transfer data secara langsung dan berkesinambungan antara klien dan server, memfasilitasi proses analisis ekspresi wajah secara real-time dan memastikan data tersampaikan dengan cepat dan akurat.
 
-Namun, ada beberapa tantangan teknis dalam mengoptimalkan sistem seperti ini, khususnya dalam hal performa sistem dan kecepatan pemrosesan. Penggunaan socket communication harus dioptimalkan agar dapat menangani lalu lintas data yang besar dengan latensi rendah. Di sisi lain, algoritma analisis ekspresi wajah harus dapat berjalan secara efisien tanpa membebani perangkat pengguna \parencite{phankokkruadRealtimeFaceRecognition2016}. Penelitian ini bertujuan untuk mengoptimalkan sistem analisis ekspresi wajah pada aplikasi pengajaran berbasis Face Recognition dan socket communication, sehingga dapat memberikan hasil analisis secara real-time dan meminimalkan gangguan teknis yang dapat mengurangi efektivitas pengajaran.
+Namun, ada beberapa tantangan teknis dalam mengoptimalkan sistem seperti ini, khususnya dalam hal performa sistem dan kecepatan pemrosesan.
+Penggunaan socket communication harus dioptimalkan agar dapat menangani lalu lintas data yang besar dengan latensi rendah.
 
 \section{Rumusan Masalah}
 {Berdasarkan latar belakang yang telah dijelaskan, rumusan masalah dalam penelitian ini adalah sebagai berikut:}
 
 \begin{enumerate}
   \item
-    {Bagaimana mengoptimalkan sistem analisis ekspresi wajah secara Real-Time pada aplikasi pengajaran berbasis Face Recognition?}
+    {Bagaimana merancang arsitektur sistem pada Google Cloud Platform (GCP) untuk aplikasi EMODU yang mendukung \textit{high availability}?}
   \item
-    {Bagaimana pemanfaatan Socket Communication dapat meningkatkan kecepatan dan keakuratan dalam pengiriman data ekspresi wajah secara Real-Time?}
+    {Bagaimana strategi implementasi \textit{auto-scalability} agar sistem dapat menangani fluktuasi beban pengguna secara efisien?}
   \item
-    {Bagaimana mengukur efektivitas optimasi yang diterapkan terhadap kinerja aplikasi?}
+    {Bagaimana menerapkan proses \textit{zero-downtime deployment} untuk pembaruan aplikasi EMODU tanpa mengganggu layanan?}
 \end{enumerate}
 
 \section{Tujuan}
@@ -29,11 +42,11 @@ Namun, ada beberapa tantangan teknis dalam mengoptimalkan sistem seperti ini, kh
 
 \begin{enumerate}
   \item
-    {Mengoptimalkan sistem analisis ekspresi wajah pada aplikasi pengajaran berbasis real-time menggunakan Face Recognition dan Socket Communication.}
+    {Merancang dan membangun arsitektur sistem yang memiliki \textit{high availability} untuk aplikasi EMODU di lingkungan Google Cloud Platform (GCP).}
   \item
-    {Mengidentifikasi tantangan dan mengembangkan solusi dalam optimasi sistem real-time untuk pengajaran interaktif.}
+    {Mengimplementasikan mekanisme \textit{auto-scalability} untuk memastikan performa sistem tetap optimal saat terjadi perubahan jumlah pengguna.}
   \item
-    {Mengevaluasi efektivitas dari optimasi yang diterapkan terhadap performa dan kualitas aplikasi dalam mendukung proses pengajaran.}
+    {Menerapkan \textit{pipeline deployment} yang memungkinkan pembaruan sistem secara \textit{zero-downtime}.}
 \end{enumerate}
 
 \section{Manfaat}
@@ -43,14 +56,11 @@ berikut:}
 
 \begin{enumerate}
   \item
-    {Menyediakan kontribusi keilmuan di bidang pengenalan wajah dan komunikasi data real-time dalam konteks pendidikan, serta sebagai referensi bagi penelitian selanjutnya.}
+    {Menghasilkan infrastruktur yang andal, skalabel, dan selalu tersedia untuk aplikasi EMODU, sehingga meningkatkan pengalaman pengguna.}
   \item
-    {Aplikasi hasil penelitian ini diharapkan dapat membantu pendidik
-      dalam memahami ekspresi dan kondisi emosional siswa secara lebih
-      efektif, sehingga dapat meningkatkan interaktivitas dan kualitas
-    pembelajaran.}
+    {Menyediakan model arsitektur dan implementasi praktis yang dapat menjadi acuan bagi pengembangan aplikasi lain dengan kebutuhan serupa di platform \textit{cloud}.}
   \item
-    {Menjadi referensi bagi pengembangan sistem serupa yang memerlukan optimasi pengiriman data real-time dan analisis ekspresi wajah dalam konteks yang lebih luas.}
+    {Memberikan kontribusi keilmuan di bidang rekayasa infrastruktur dan DevOps mengenai penerapan prinsip \textit{high availability} dan \textit{auto-scalability} pada platform GCP.}
 \end{enumerate}
 
 \section{Batasan}
@@ -60,9 +70,9 @@ ini memiliki beberapa batasan sebagai berikut:}
 
 \begin{enumerate}
   \item
-    {Aplikasi ~akan dibatasi pada penggunaan teknologi face recognition. Menggunakan komunikasi data melalui REST API dan Socket Communication pada aplikasi berbasis web.}
+    {Penelitian berfokus pada perancangan dan implementasi infrastruktur di Google Cloud Platform (GCP), dan tidak melakukan perbandingan dengan platform \textit{cloud} lainnya.}
   \item
-    {Pengujian dilakukan dalam lingkungan simulasi kelas kecil, dengan jumlah pengguna yang terbatas.}
+    {Studi kasus terbatas pada aplikasi EMODU, tanpa melakukan modifikasi atau optimasi pada kode sumber aplikasi.}
   \item
-    {Sistem hanya akan diimplementasikan pada platform WEB Desktop dengan kamera, dan tidak diuji pada perangkat mobile.}
+    {Pengujian sistem dilakukan dalam lingkungan simulasi menggunakan \textit{load testing} untuk mengukur skalabilitas dan ketersediaan, bukan pada pengguna aktif secara masif.}
 \end{enumerate}

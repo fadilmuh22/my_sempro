@@ -22,22 +22,17 @@
   \textbf{Hasil}
 
   \\ \hline
-  {A Real-time Face Recognition for Class Participation Enrollment System Over WebRTC \parencite{phankokkruadRealtimeFaceRecognition2016}} &
-  {Akurasi deteksi wajah, ~Attendance reliability, performa Real-Time.} &
-  {Implementasi pengenalan wajah berbasis WebRTC untuk sistem kehadiran kelas, dengan evaluasi akurasi dan kecepatan respons.} &
-  {Sistem terbukti efektif untuk mencatat kehadiran kehadiran siswa dan dapat memotivasi siswa untuk hadir di kelas.}
+  {Web Application Development for Biometric Identification System Based on Neural Network Face Recognition \parencite{bykovWebApplicationDevelopment2020}} &
+  {Akurasi deteksi wajah, System Response.} &
+  {Pengembangan aplikasi web berbasis neural network untuk identifikasi wajah dengan arsitektur MVC dan pengujian performa modul.} &
+  {Kompleks identifikasi biometrik berhasil diterapkan di lingkungan keamanan seperti bandara dengan akurasi tinggi.}
+
 
   \\ \hline
   {Real time Face Detection and Optimal Face Mapping for Online Classes \parencite{archanaRealTimeFace2022}} &
   {Akurasi deteksi wajah, ~Attendance reliability, Real-Time Performance.} &
   {Perbandingan algoritma Local Binary Pattern Histogram (LBPH) dan Convolutional Neural Network (CNN) untuk pengenalan wajah serta Haar Cascade untuk deteksi wajah.} &
   {Algoritma CNN memiliki akurasi 95\%, lebih tinggi dibandingkan LBPH (78\%), menunjukkan keunggulan untuk kehadiran real-time dalam kelas online.}
-
-  \\ \hline
-  {Web Application Development for Biometric Identification System Based on Neural Network Face Recognition \parencite{bykovWebApplicationDevelopment2020}} &
-  {Akurasi deteksi wajah, System Response.} &
-  {Pengembangan aplikasi web berbasis neural network untuk identifikasi wajah dengan arsitektur MVC dan pengujian performa modul.} &
-  {Kompleks identifikasi biometrik berhasil diterapkan di lingkungan keamanan seperti bandara dengan akurasi tinggi.}
 
   \\ \hline
   {Web Front-End Realtime Face Recognition Based on TFJS \parencite{liWebFrontEndRealtime2019}} &
@@ -68,16 +63,28 @@
 
 \end{longtable}
 
-\newpage
+ewpage
 
-\section{Deteksi Ekspresi}
-Deteksi ekspresi wajah adalah proses analisis dan interpretasi ekspresi wajah manusia melalui perangkat lunak untuk mengenali emosi, seperti senang, sedih, bingung, dan fokus. Teknologi ini sering didasarkan pada face recognition yang mengidentifikasi fitur-fitur wajah melalui berbagai teknik seperti pengenalan pola, analisis tekstur, dan deep learning \parencite{archanaRealTimeFace2022}. Dalam aplikasi pengajaran berbasis real-time, deteksi ekspresi wajah memungkinkan pengajar untuk memahami respons siswa dengan cepat, mendukung interaksi yang lebih responsif dan efektif dalam pembelajaran \parencite{archanaRealTimeFace2022}.
+\section{High Availability}
+High Availability (HA) adalah konsep desain sistem yang bertujuan untuk memastikan tingkat ketersediaan operasional yang tinggi dan berkelanjutan, biasanya mendekati 100\%.
+Tujuan utama dari arsitektur HA adalah untuk menghilangkan satu titik kegagalan (Single Point of Failure) dalam infrastruktur, sehingga sistem dapat terus berfungsi meskipun terjadi kegagalan pada salah satu komponennya.
+Strategi umum untuk mencapai HA meliputi redundansi, di mana komponen kritis seperti server, basis data, dan load balancer diduplikasi, serta mekanisme failover otomatis yang mengalihkan lalu lintas dari komponen yang gagal ke komponen cadangan tanpa intervensi manual.
+Dengan demikian, layanan tetap dapat diakses oleh pengguna dengan downtime minimal atau bahkan tanpa downtime sama sekali.
 
-\section{Socket Communication}
-Socket communication adalah metode yang digunakan untuk memungkinkan transfer data secara real-time antara client dan server. Teknologi ini memanfaatkan protokol TCP/IP atau WebSocket untuk mempertahankan koneksi yang persisten, memungkinkan aplikasi untuk mengirim dan menerima data secara cepat dan efisien. Dalam konteks aplikasi pengajaran berbasis real-time, socket communication berperan penting untuk memastikan bahwa data terkait ekspresi wajah siswa dapat dikirimkan secara Real-Time ke server dan disampaikan kepada pengajar yang memungkinkan minimnya Latency dan Network Traffic di sistem \parencite{ogundeyiWebSocketRealTime2019}.
+\section{Auto Scalability}
+Auto scalability, atau skalabilitas otomatis, adalah kemampuan sistem untuk secara dinamis menyesuaikan alokasi sumber daya komputasi berdasarkan permintaan lalu lintas saat ini.
+Dalam lingkungan cloud seperti Google Cloud Platform (GCP), fitur ini memungkinkan aplikasi untuk secara otomatis menambah (scale-out) atau mengurangi (scale-in) jumlah server atau sumber daya lainnya.
+Mekanisme ini memastikan bahwa aplikasi memiliki kapasitas yang cukup untuk menangani lonjakan lalu lintas tanpa mengalami penurunan performa, sekaligus mengoptimalkan biaya dengan mengurangi sumber daya saat permintaan rendah.
+Implementasi auto scalability sering kali menggunakan layanan seperti Managed Instance Groups (MIGs) di Google Compute Engine atau Horizontal Pod Autoscaler (HPA) di Google Kubernetes Engine (GKE).
 
-\section{Ekstensi Pramban}
-Ekstensi pramban web adalah aplikasi kecil yang dapat ditambahkan ke peramban untuk memberikan fungsi tambahan atau mengubah perilaku halaman web tertentu \parencite{jinImpactExtensionsBrowser2024}. Ekstensi ini memungkinkan fitur khusus seperti integrasi face recognition, yang berjalan di sisi pengguna untuk memproses data visual secara langsung tanpa memerlukan pengiriman seluruh data gambar ke server. Ekstensi pramban untuk pengajaran dapat mengumpulkan data ekspresi wajah siswa secara otomatis dan mengirimkannya ke server melalui socket communication, menjaga interaksi tetap real-time dan membantu pengajar menilai kondisi siswa lebih akurat.
+\section{Zero Downtime Deployment}
+Zero Downtime Deployment adalah strategi penerapan (deployment) yang memungkinkan pembaruan perangkat lunak atau aplikasi dilakukan tanpa mengganggu ketersediaan layanan bagi pengguna.
+Tujuannya adalah untuk merilis versi baru secara mulus sehingga transisi dari versi lama ke versi baru tidak terlihat oleh pengguna akhir.
+Terdapat beberapa teknik populer untuk mencapai ini, seperti Blue-Green Deployment, di mana dua lingkungan produksi identik disiapkan secara paralel, dan lalu lintas dialihkan ke lingkungan baru setelah pengujian selesai.
+Teknik lainnya adalah Canary Release, di mana pembaruan dirilis secara bertahap ke sebagian kecil pengguna sebelum diluncurkan sepenuhnya, serta Rolling Update, yang memperbarui instance satu per satu.
 
-\section{Performance Testing}
-Performance testing adalah serangkaian proses pengujian untuk mengukur stabilitas, kecepatan, dan efisiensi aplikasi dalam berbagai kondisi operasional \parencite{jinImpactExtensionsBrowser2024}. Dalam aplikasi real-time yang menggunakan socket communication dan face recognition, performance testing penting untuk memastikan bahwa pengiriman data, pemrosesan gambar, dan penyampaian hasil tetap cepat dan responsif. Pengujian ini juga berguna untuk mengidentifikasi potensi bottleneck dalam aliran data dan meningkatkan pengoptimalan sistem agar mampu menangani beban pemrosesan dalam situasi penggunaan yang intensif.
+\section{Google Cloud Platform (GCP)}
+Google Cloud Platform (GCP) adalah serangkaian layanan komputasi awan yang ditawarkan oleh Google.
+GCP menyediakan infrastruktur yang andal, skalabel, dan aman untuk membangun, menerapkan, dan mengelola aplikasi di seluruh dunia.
+Platform ini menawarkan berbagai layanan yang mendukung implementasi arsitektur modern, termasuk Google Kubernetes Engine (GKE) untuk orkestrasi kontainer, Cloud Load Balancing untuk distribusi lalu lintas yang efisien, dan Managed Instance Groups (MIGs) untuk manajemen dan skalabilitas otomatis pada mesin virtual.
+Dengan memanfaatkan layanan-layanan ini, pengembang dapat membangun sistem yang memiliki ketersediaan tinggi, skalabilitas otomatis, dan kemampuan untuk melakukan zero downtime deployment, yang sangat penting untuk aplikasi kritis bisnis seperti platform EMODU.
