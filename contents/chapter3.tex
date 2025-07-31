@@ -11,43 +11,47 @@
   \caption{Design Research Methodology (DRM)}
 \end{figure}
 
-Penelitian ini menggunakan pendekatan Design Research Methodology (DRM) untuk mengembangkan solusi teknis secara sistematis, bertujuan memahami dan mengoptimalkan sistem deteksi ekspresi wajah dalam aplikasi pengajaran real-time.
-Melalui DRM, penelitian berfokus pada tahapan identifikasi masalah, perancangan solusi, dan evaluasi hasil dalam konteks aplikasi pengajaran yang berbasis teknologi
+Penelitian ini menggunakan pendekatan Design Research Methodology (DRM) untuk mengembangkan solusi teknis secara sistematis.
+Tujuan utamanya adalah merancang, mengimplementasikan, dan mengevaluasi arsitektur sistem untuk aplikasi EMODU di Google Cloud Platform (GCP).
+Melalui DRM, penelitian berfokus pada perancangan arsitektur yang memenuhi tiga pilar utama: ketersediaan tinggi (\textit{high availability}), skalabilitas otomatis (\textit{auto-scalability}), dan penerapan tanpa henti (\textit{zero-downtime deployment}).
 
 \subsection{Klarifikasi Penelitian}
-Tahap ini berfokus pada identifikasi masalah dan penentuan ruang lingkup secara spesifik.
-Pada tahap ini, penelitian bertujuan mengoptimalkan sistem deteksi ekspresi wajah guna meningkatkan performa dan keandalan aplikasi pengajaran real-time.
-Penelitian juga akan mengidentifikasi kebutuhan utama pengguna aplikasi, yaitu pengajar yang memerlukan data ekspresi siswa secara akurat dan tepat waktu.
-Untuk mendukung optimalisasi sistem, penelitian ini akan melakukan kajian pustaka yang lebih dalam terkait teknologi face recognition, socket communication, ekstensi pramban, dan pengujian performa.
+Tahap ini berfokus pada identifikasi masalah dan penentuan ruang lingkup penelitian.
+Masalah utama yang diidentifikasi adalah bagaimana membangun infrastruktur yang andal dan efisien untuk aplikasi EMODU, yang berpotensi mengalami pertumbuhan pengguna dan beban kerja yang fluktuatif.
+Ruang lingkup penelitian dibatasi pada perancangan dan implementasi arsitektur di Google Cloud Platform (GCP).
+Kajian pustaka akan difokuskan pada konsep-konsep kunci seperti arsitektur \textit{high availability}, mekanisme \textit{auto-scalability} pada GCP (misalnya, Managed Instance Groups), strategi \textit{zero-downtime deployment} (seperti Blue-Green atau Rolling Updates), dan praktik terbaik DevOps untuk CI/CD.
 
 \subsection{Studi Deskriptif I}
-Pada tahap deskripsi, dilakukan pengumpulan data empiris guna memahami kondisi sistem yang ada serta tantangan yang dihadapi dalam penerapan deteksi ekspresi wajah pada aplikasi pengajaran.
-Penelitian akan melakukan analisis terhadap sistem eksisting atau konsep awal, seperti teknologi face recognition dan socket communication.
-Selain itu, studi kasus akan dilakukan pada aplikasi pengajaran real-time terkait, atau melalui prototipe awal, untuk memahami bagaimana deteksi ekspresi wajah dapat diimplementasikan secara optimal.
-Permasalahan teknis seperti latensi, akurasi deteksi wajah, dan performa sistem saat beban tinggi juga akan diidentifikasi pada tahap ini.
+Pada tahap ini, dilakukan analisis terhadap arsitektur awal atau baseline dari aplikasi EMODU.
+Tujuannya adalah untuk memahami komponen-komponen sistem yang ada (backend NestJS, CMS Next.js, komunikasi socket) dan mengidentifikasi potensi kelemahan infrastruktur.
+Analisis ini mencakup identifikasi titik tunggal kegagalan (\textit{single points of failure}), potensi masalah skalabilitas, dan proses deployment yang masih manual.
+Hasil dari studi ini akan menjadi dasar untuk perancangan arsitektur yang lebih tangguh dan otomatis.
 
 \subsection{Studi Preskriptif}
-Pada tahap ini, penelitian akan merancang solusi untuk mengatasi masalah yang ditemukan pada tahap sebelumnya.
-Solusi ini difokuskan pada peningkatan performa deteksi ekspresi wajah melalui optimalisasi penerapan face recognition dan socket communication.
-Sistem yang dikembangkan akan mengikuti best practice developer untuk mencapai hasil optimal.
-Prototipe aplikasi yang dibangun akan memanfaatkan ekstensi pramban untuk pengumpulan data ekspresi wajah, service worker untuk caching data, dan socket communication untuk pengiriman data real-time.
-Metode evaluasi juga akan ditetapkan untuk mengukur kecepatan transmisi, akurasi deteksi ekspresi wajah, dan performa sistem secara keseluruhan.
+Pada tahap ini, dirancang sebuah arsitektur infrastruktur solusi di Google Cloud Platform (GCP) untuk mengatasi masalah yang telah diidentifikasi.
+Desain arsitektur akan merinci penggunaan layanan-layanan GCP yang spesifik, seperti Google Compute Engine dengan Managed Instance Groups untuk \textit{auto-scaling}, Cloud Load Balancing untuk distribusi lalu lintas dan \textit{high availability}, serta Cloud Build atau GitHub Actions untuk membangun pipeline CI/CD yang mendukung \textit{zero-downtime deployment}.
+Arsitektur ini dirancang secara eksplisit untuk memastikan sistem dapat pulih dari kegagalan, beradaptasi dengan beban pengguna, dan dapat diperbarui tanpa mengganggu layanan.
 
 \subsection{Studi Deskriptif II}
-Pada tahap ini, sistem yang dikembangkan akan dinilai efektivitasnya dalam meningkatkan performa aplikasi pengajaran real-time.
-Pengujian performa akan dilakukan untuk mengukur kecepatan pengiriman data ekspresi wajah menggunakan socket communication dan keandalan face recognition di berbagai kondisi lingkungan dan jumlah pengguna.
-Evaluasi akan menilai keberhasilan optimasi dari segi akurasi, latensi pengiriman data, dan pengalaman pengguna.
-Analisis hasil dari pengujian ini akan membantu menentukan sejauh mana solusi ini dapat diterapkan pada skala yang lebih luas.
+Pada tahap ini, arsitektur yang telah dirancang akan diimplementasikan dan dievaluasi kinerjanya.
+Aplikasi EMODU akan di-deploy pada infrastruktur GCP yang baru, kemudian serangkaian pengujian akan dilakukan untuk memvalidasi pencapaian tujuan penelitian.
+Evaluasi akan mencakup:
+\begin{itemize}
+    \item \textbf{Pengujian High Availability:} Melakukan simulasi kegagalan (contoh: menghentikan salah satu instance server) dan mengukur waktu pemulihan sistem secara otomatis.
+    \item \textbf{Pengujian Auto-scalability:} Menggunakan alat \textit{load testing} seperti JMeter untuk memberikan beban lalu lintas yang tinggi dan memverifikasi bahwa sistem secara otomatis menambah atau mengurangi jumlah instance sesuai dengan beban.
+    \item \textbf{Pengujian Zero-Downtime Deployment:} Menjalankan pipeline deployment untuk versi baru aplikasi dan memverifikasi bahwa tidak ada gangguan layanan atau kegagalan permintaan selama proses pembaruan.
+\end{itemize}
+Hasil dari evaluasi ini akan menunjukkan efektivitas dari arsitektur yang diimplementasikan.
 
 \section{Populasi dan Sampel}
-Dalam penelitian ini, populasi yang ditargetkan adalah pengajar dan siswa yang menggunakan aplikasi pengajaran berbasis real-time.
-Pengambilan sampel akan dilakukan secara purposive sampling, di mana sampel terdiri dari pengajar yang menggunakan teknologi pengajaran serta siswa dari berbagai latar belakang yang bersedia berpartisipasi dalam pengujian aplikasi.
-Jumlah sampel akan ditentukan berdasarkan kebutuhan pengujian performa dan efektivitas sistem, dengan estimasi sekitar 10-20 partisipan.
-Pengajar berperan sebagai pengguna utama yang akan mengamati dan mengevaluasi ekspresi wajah siswa untuk mendukung proses pembelajaran, sementara siswa berperan dalam memberikan data ekspresi wajah yang akan dianalisis oleh sistem.
+Fokus penelitian ini adalah pada sistem teknis, bukan pada pengguna manusia.
+Dengan demikian, \textbf{populasi} dalam penelitian ini adalah keseluruhan kemungkinan konfigurasi arsitektur infrastruktur untuk aplikasi berskala seperti EMODU.
+\textbf{Sampel} yang diambil adalah arsitektur spesifik yang dirancang dan diimplementasikan pada Google Cloud Platform dalam penelitian ini.
+Objek yang diuji bukanlah partisipan manusia, melainkan kinerja dari komponen-komponen infrastruktur itu sendiri ketika diberikan beban kerja yang disimulasikan.
 
 \section{Alat dan Bahan Penelitian}
 \subsection{Alat Penelitian}
-Spesifikasi komputer yang digunakan dalam penelitian ini adalah sebagai berikut:
+Spesifikasi komputer yang digunakan untuk pengembangan dan pengelolaan adalah sebagai berikut:
 \begin{itemize}
   \item CPU AMD Ryzen 5 PRO 5650U
   \item RAM 14.94 GB
@@ -56,47 +60,49 @@ Spesifikasi komputer yang digunakan dalam penelitian ini adalah sebagai berikut:
 
 \hspace{-32pt} Perangkat lunak yang akan digunakan dalam penelitian ini meliputi:
 \begin{itemize}
-  \item Ubuntu 24.04.01 LTS
-  \item Node.js
-  \item NestJS
-  \item ReactJS
-  \item face-api.js
-  \item Postman
-  \item Google Chrome DevTools
-  \item JMeter
-  \item Playwright
-  \item Wireshark
-  \item Grafana
-  \item Python
-  \item Tableau
-  \item Zotero
-  \item LaTex
-  \item Visual Studio Code
+  \item Fedora Workstation 41
+  \item Node.js, NestJS, ReactJS (untuk aplikasi EMODU)
+  \item Docker (untuk kontainerisasi aplikasi)
+  \item Google Cloud SDK (gcloud CLI)
+  \item Postman (untuk pengujian API)
+  \item JMeter (untuk \textit{load testing})
+  \item Playwright (untuk pengujian \textit{end-to-end})
+  \item Grafana \& Google Cloud Monitoring (untuk observabilitas dan visualisasi metrik)
+  \item GitHub Actions (untuk pipeline CI/CD)
+  \item Zotero, LaTex, Visual Studio Code
 \end{itemize}
 
-\hspace{-32pt} Infrastruktur server yang digunakan dalam penelitian ini adalah Vercel Hobby Plan. Vercel menyediakan hosting yang mendukung pengembangan dan deployment aplikasi web dengan spesifikasi sebagai berikut:
+\hspace{-32pt} Infrastruktur \textit{cloud} yang digunakan dalam penelitian ini adalah \textbf{Google Cloud Platform (GCP)}. Layanan utama yang akan digunakan meliputi:
 \begin{itemize}
-  \item Bandwidth: 100 GB per bulan
-  \item Build Execution Timeout: 45 detik
-  \item Serverless Function Execution Timeout: 10 detik
-  \item Serverless Function Memory: 1024 MB
+  \item \textbf{Google Compute Engine (GCE):} Sebagai penyedia mesin virtual untuk menjalankan aplikasi.
+  \item \textbf{Managed Instance Groups (MIGs):} Untuk mengelola grup instance dan menerapkan \textit{auto-scaling}.
+  \item \textbf{Cloud Load Balancing:} Untuk mendistribusikan lalu lintas dan menyediakan satu titik akses yang \textit{highly available}.
+  \item \textbf{Cloud Build:} Sebagai platform CI/CD untuk otomatisasi build, test, dan deploy.
+  \item \textbf{Artifact Registry:} Untuk menyimpan dan mengelola artefak build seperti image Docker.
 \end{itemize}
 
 \subsection{Bahan Penelitian}
-Bahan penelitian yang digunakan dalam penelitian ini meliputi: artikel jurnal, buku, dan dokumen terkait teknologi face recognition, socket communication, dan aplikasi pengajaran berbasis real-time.
-Kuesioner dari pengguna aplikasi juga akan digunakan sebagai bahan penelitian untuk mengukur persepsi pengguna terhadap aplikasi yang dikembangkan.
+Bahan penelitian yang digunakan meliputi sumber-sumber literatur teknis, yaitu: artikel jurnal ilmiah, dokumentasi resmi dari Google Cloud Platform, buku, dan panduan praktik terbaik (\textit{best practices}) yang berkaitan dengan arsitektur \textit{high availability}, \textit{auto-scalability}, dan \textit{zero-downtime deployment}.
+Selain itu, data utama yang menjadi bahan penelitian adalah data kuantitatif berupa metrik kinerja sistem (misalnya, waktu respons, tingkat kesalahan, utilisasi CPU, jumlah instance) yang dikumpulkan dari hasil pengujian beban dan pemantauan sistem.
 
 \section{Instrumen Penelitian}
-Instrumen penelitian yang digunakan dalam penelitian ini meliputi beberapa komponen untuk mendukung pengumpulan data yang efektif.
-Pertama, prototipe aplikasi yang dikembangkan sebagai alat utama untuk mengimplementasikan sistem deteksi ekspresi wajah dan menguji performa sistem secara real-time \parencite{archanaRealTimeFace2022}.
-Kedua, kuesioner yang dirancang untuk mengukur persepsi pengguna, di mana pertanyaan dalam kuesioner ini akan mencakup aspek kepuasan pengguna terhadap keakuratan deteksi, dan pengalaman keseluruhan saat menggunakan aplikasi.
-Selain itu, pengujian teknis juga akan dilakukan untuk mengukur performa sistem menggunakan alat pengukuran latensi dan kecepatan, serta software analisis data untuk menganalisis hasil kuesioner dan pengamatan \parencite{budimanWebPerformanceOptimization2019}.
-
-Untuk pengujian beban dan kinerja aplikasi, JMeter digunakan untuk mengukur latensi dan throughput sistem. Google Chrome DevTools digunakan untuk menganalisis performa aplikasi web, termasuk pemantauan penggunaan CPU, memori, dan analisis jaringan \parencite{jinImpactExtensionsBrowser2024}. Jest digunakan untuk melakukan pengujian unit dan integrasi pada kode backend dan frontend, memastikan bahwa setiap komponen aplikasi berfungsi dengan benar \parencite{bykovWebApplicationDevelopment2020}. Playwright digunakan untuk melakukan pengujian end-to-end pada aplikasi, memastikan bahwa seluruh alur kerja aplikasi berjalan sesuai dengan yang diharapkan. Wireshark digunakan untuk menganalisis lalu lintas jaringan dan memastikan bahwa komunikasi data antara klien dan server berjalan dengan efisien. Postman digunakan untuk menguji API yang dikembangkan, memastikan bahwa setiap endpoint berfungsi dengan benar dan memberikan respons yang diharapkan.
-
-Untuk analisis data performa aplikasi secara real-time, Grafana digunakan untuk memvisualisasikan data performa aplikasi, membantu dalam pemantauan dan analisis performa sistem \parencite{ogundeyiWebSocketRealTime2019}. Selain itu, Python dan Tableau digunakan untuk menganalisis hasil kuesioner dan pengamatan, memberikan wawasan yang lebih mendalam tentang efektivitas sistem yang dikembangkan \parencite{fowdurRealtimeMachineLearning2024}.
-
-Dengan instrumen-instrumen ini, diharapkan penelitian dapat memperoleh data yang komprehensif dan valid untuk mengevaluasi efektivitas sistem yang dikembangkan.
+Instrumen yang digunakan dalam penelitian ini adalah alat untuk membangun, mengukur, dan mengevaluasi arsitektur sistem.
+Instrumen utama adalah \textbf{arsitektur infrastruktur itu sendiri} yang diimplementasikan di GCP.
+Untuk mengukur kinerja arsitektur tersebut, digunakan instrumen-instrumen berikut:
+\begin{itemize}
+    \item \textbf{JMeter dan Playwright:} Digunakan sebagai instrumen \textit{load testing} untuk menghasilkan beban pengguna sintetis dan mengukur metrik kinerja seperti \textit{throughput} dan latensi.
+    \item \textbf{Google Cloud Monitoring dan Grafana:} Digunakan sebagai instrumen observabilitas untuk mengumpulkan, memantau, dan memvisualisasikan data metrik dari infrastruktur secara \textit{real-time}, seperti utilisasi CPU, jumlah instance, dan status \textit{health check}.
+    \item \textbf{Pipeline CI/CD (GitHub Actions/Cloud Build):} Digunakan sebagai instrumen untuk menguji dan memvalidasi proses \textit{zero-downtime deployment}.
+    \item \textbf{Skrip Otomatisasi:} Skrip yang dibuat untuk mensimulasikan kegagalan (fault injection), misalnya mematikan instance secara acak, untuk menguji mekanisme \textit{high availability} dan \textit{-failover}.
+\end{itemize}
+Kombinasi instrumen ini memungkinkan pengumpulan data yang objektif untuk mengevaluasi keberhasilan implementasi arsitektur.
 
 \section{Analisis Data}
-Data hasil pengujian dan observasi dianalisis untuk menilai keberhasilan optimasi yang diterapkan. Analisis dilakukan secara kuantitatif untuk aspek performa teknis seperti latensi, kecepatan, dan akurasi, serta secara kualitatif untuk memahami persepsi pengguna terhadap aplikasi ini. Hasil analisis ini akan digunakan sebagai dasar untuk menarik kesimpulan serta memberikan rekomendasi bagi pengembangan sistem deteksi ekspresi wajah yang optimal pada aplikasi pengajaran berbasis real-time.
+Analisis data dalam penelitian ini bersifat kuantitatif dan berfokus pada metrik kinerja infrastruktur yang telah dikumpulkan.
+Data akan dianalisis untuk mengevaluasi setiap tujuan utama penelitian:
+\begin{itemize}
+    \item \textbf{Analisis Auto-scalability:} Menganalisis grafik korelasi antara peningkatan beban (jumlah pengguna virtual) dengan metrik seperti waktu respons dan jumlah instance server yang aktif. Keberhasilan dinilai dari kemampuan sistem menjaga waktu respons tetap stabil dengan menyesuaikan jumlah instance secara otomatis.
+    \item \textbf{Analisis High Availability:} Menganalisis log dan data monitoring untuk mengukur waktu yang dibutuhkan sistem untuk pulih setelah simulasi kegagalan. Keberhasilan diukur dari kecepatan pemulihan dan minimnya tingkat kesalahan selama proses \textit{failover}.
+    \item \textbf{Analisis Zero-Downtime Deployment:} Menganalisis metrik ketersediaan (availability) dan tingkat kesalahan (error rate) selama proses deployment. Keberhasilan dinilai jika metrik menunjukkan 100\% ketersediaan dan 0\% kesalahan selama pembaruan berlangsung.
+\end{itemize}
+Hasil analisis ini akan menjadi dasar untuk menarik kesimpulan mengenai efektivitas arsitektur yang diusulkan dalam mencapai \textit{high availability}, \textit{auto-scalability}, dan \textit{zero-downtime deployment}.

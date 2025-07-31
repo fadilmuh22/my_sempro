@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nest-app:
+    image: your-dockerhub-username/emodu-app:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=your_database_url
+      - JWT_SECRET=your_jwt_secret
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
