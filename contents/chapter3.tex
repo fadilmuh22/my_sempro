@@ -13,13 +13,13 @@
 
 Penelitian ini menggunakan pendekatan Design Research Methodology (DRM) untuk mengembangkan solusi teknis secara sistematis.
 Tujuan utamanya adalah merancang, mengimplementasikan, dan mengevaluasi arsitektur sistem untuk aplikasi EMODU di Google Cloud Platform (GCP).
-Melalui DRM, penelitian berfokus pada perancangan arsitektur yang memenuhi tiga pilar utama: ketersediaan tinggi (\textit{high availability}), skalabilitas otomatis (\textit{auto-scalability}), dan penerapan tanpa henti (\textit{zero-downtime deployment}).
+Melalui DRM, penelitian berfokus pada perancangan arsitektur yang memenuhi tiga pilar utama: ketersediaan tinggi (\textit{high availability}), skalabilitas otomatis (\textit{scalability}), dan penerapan tanpa henti (\textit{zero-downtime deployment}).
 
 \subsection{Klarifikasi Penelitian}
 Tahap ini berfokus pada identifikasi masalah dan penentuan ruang lingkup penelitian.
 Masalah utama yang diidentifikasi adalah bagaimana membangun infrastruktur yang andal dan efisien untuk aplikasi EMODU, yang berpotensi mengalami pertumbuhan pengguna dan beban kerja yang fluktuatif.
 Ruang lingkup penelitian dibatasi pada perancangan dan implementasi arsitektur di Google Cloud Platform (GCP).
-Kajian pustaka akan difokuskan pada konsep-konsep kunci seperti arsitektur \textit{high availability}, mekanisme \textit{auto-scalability} pada GCP (misalnya, Managed Instance Groups), strategi \textit{zero-downtime deployment} (seperti Blue-Green atau Rolling Updates), dan praktik terbaik DevOps untuk CI/CD.
+Kajian pustaka akan difokuskan pada konsep-konsep kunci seperti arsitektur \textit{high availability}, mekanisme \textit{scalability} pada GCP (misalnya, Managed Instance Groups), strategi \textit{zero-downtime deployment} (seperti Blue-Green atau Rolling Updates), dan praktik terbaik DevOps untuk CI/CD.
 
 \subsection{Studi Deskriptif I}
 Pada tahap ini, dilakukan analisis terhadap arsitektur awal atau baseline dari aplikasi EMODU.
@@ -29,7 +29,7 @@ Hasil dari studi ini akan menjadi dasar untuk perancangan arsitektur yang lebih 
 
 \subsection{Studi Preskriptif}
 Pada tahap ini, dirancang sebuah arsitektur infrastruktur solusi di Google Cloud Platform (GCP) untuk mengatasi masalah yang telah diidentifikasi.
-Desain arsitektur akan merinci penggunaan layanan-layanan GCP yang spesifik, seperti Google Compute Engine dengan Managed Instance Groups untuk \textit{auto-scaling}, Cloud Load Balancing untuk distribusi lalu lintas dan \textit{high availability}, serta Cloud Build atau GitHub Actions untuk membangun pipeline CI/CD yang mendukung \textit{zero-downtime deployment}.
+Desain arsitektur akan merinci penggunaan layanan-layanan GCP yang spesifik, seperti Google Compute Engine dengan Managed Instance Groups untuk \textit{scaling}, Cloud Load Balancing untuk distribusi lalu lintas dan \textit{high availability}, serta Cloud Build atau GitHub Actions untuk membangun pipeline CI/CD yang mendukung \textit{zero-downtime deployment}.
 Arsitektur ini dirancang secara eksplisit untuk memastikan sistem dapat pulih dari kegagalan, beradaptasi dengan beban pengguna, dan dapat diperbarui tanpa mengganggu layanan.
 
 \subsection{Studi Deskriptif II}
@@ -38,7 +38,7 @@ Aplikasi EMODU akan di-deploy pada infrastruktur GCP yang baru, kemudian serangk
 Evaluasi akan mencakup:
 \begin{itemize}
     \item \textbf{Pengujian High Availability:} Melakukan simulasi kegagalan (contoh: menghentikan salah satu instance server) dan mengukur waktu pemulihan sistem secara otomatis.
-    \item \textbf{Pengujian Auto-scalability:} Menggunakan alat \textit{load testing} seperti JMeter untuk memberikan beban lalu lintas yang tinggi dan memverifikasi bahwa sistem secara otomatis menambah atau mengurangi jumlah instance sesuai dengan beban.
+    \item \textbf{Pengujian scalability:} Menggunakan alat \textit{load testing} seperti JMeter untuk memberikan beban lalu lintas yang tinggi dan memverifikasi bahwa sistem secara otomatis menambah atau mengurangi jumlah instance sesuai dengan beban.
     \item \textbf{Pengujian Zero-Downtime Deployment:} Menjalankan pipeline deployment untuk versi baru aplikasi dan memverifikasi bahwa tidak ada gangguan layanan atau kegagalan permintaan selama proses pembaruan.
 \end{itemize}
 Hasil dari evaluasi ini akan menunjukkan efektivitas dari arsitektur yang diimplementasikan.
@@ -75,14 +75,14 @@ Spesifikasi komputer yang digunakan untuk pengembangan dan pengelolaan adalah se
 \hspace{-32pt} Infrastruktur \textit{cloud} yang digunakan dalam penelitian ini adalah \textbf{Google Cloud Platform (GCP)}. Layanan utama yang akan digunakan meliputi:
 \begin{itemize}
   \item \textbf{Google Compute Engine (GCE):} Sebagai penyedia mesin virtual untuk menjalankan aplikasi.
-  \item \textbf{Managed Instance Groups (MIGs):} Untuk mengelola grup instance dan menerapkan \textit{auto-scaling}.
+  \item \textbf{Managed Instance Groups (MIGs):} Untuk mengelola grup instance dan menerapkan \textit{scaling}.
   \item \textbf{Cloud Load Balancing:} Untuk mendistribusikan lalu lintas dan menyediakan satu titik akses yang \textit{highly available}.
   \item \textbf{Cloud Build:} Sebagai platform CI/CD untuk otomatisasi build, test, dan deploy.
   \item \textbf{Artifact Registry:} Untuk menyimpan dan mengelola artefak build seperti image Docker.
 \end{itemize}
 
 \subsection{Bahan Penelitian}
-Bahan penelitian yang digunakan meliputi sumber-sumber literatur teknis, yaitu: artikel jurnal ilmiah, dokumentasi resmi dari Google Cloud Platform, buku, dan panduan praktik terbaik (\textit{best practices}) yang berkaitan dengan arsitektur \textit{high availability}, \textit{auto-scalability}, dan \textit{zero-downtime deployment}.
+Bahan penelitian yang digunakan meliputi sumber-sumber literatur teknis, yaitu: artikel jurnal ilmiah, dokumentasi resmi dari Google Cloud Platform, buku, dan panduan praktik terbaik (\textit{best practices}) yang berkaitan dengan arsitektur \textit{high availability}, \textit{scalability}, dan \textit{zero-downtime deployment}.
 Selain itu, data utama yang menjadi bahan penelitian adalah data kuantitatif berupa metrik kinerja sistem (misalnya, waktu respons, tingkat kesalahan, utilisasi CPU, jumlah instance) yang dikumpulkan dari hasil pengujian beban dan pemantauan sistem.
 
 \section{Instrumen Penelitian}
@@ -101,8 +101,8 @@ Kombinasi instrumen ini memungkinkan pengumpulan data yang objektif untuk mengev
 Analisis data dalam penelitian ini bersifat kuantitatif dan berfokus pada metrik kinerja infrastruktur yang telah dikumpulkan.
 Data akan dianalisis untuk mengevaluasi setiap tujuan utama penelitian:
 \begin{itemize}
-    \item \textbf{Analisis Auto-scalability:} Menganalisis grafik korelasi antara peningkatan beban (jumlah pengguna virtual) dengan metrik seperti waktu respons dan jumlah instance server yang aktif. Keberhasilan dinilai dari kemampuan sistem menjaga waktu respons tetap stabil dengan menyesuaikan jumlah instance secara otomatis.
+    \item \textbf{Analisis Scalability:} Menganalisis grafik korelasi antara peningkatan beban (jumlah pengguna virtual) dengan metrik seperti waktu respons dan jumlah instance server yang aktif. Keberhasilan dinilai dari kemampuan sistem menjaga waktu respons tetap stabil dengan menyesuaikan jumlah instance secara otomatis.
     \item \textbf{Analisis High Availability:} Menganalisis log dan data monitoring untuk mengukur waktu yang dibutuhkan sistem untuk pulih setelah simulasi kegagalan. Keberhasilan diukur dari kecepatan pemulihan dan minimnya tingkat kesalahan selama proses \textit{failover}.
     \item \textbf{Analisis Zero-Downtime Deployment:} Menganalisis metrik ketersediaan (availability) dan tingkat kesalahan (error rate) selama proses deployment. Keberhasilan dinilai jika metrik menunjukkan 100\% ketersediaan dan 0\% kesalahan selama pembaruan berlangsung.
 \end{itemize}
-Hasil analisis ini akan menjadi dasar untuk menarik kesimpulan mengenai efektivitas arsitektur yang diusulkan dalam mencapai \textit{high availability}, \textit{auto-scalability}, dan \textit{zero-downtime deployment}.
+Hasil analisis ini akan menjadi dasar untuk menarik kesimpulan mengenai efektivitas arsitektur yang diusulkan dalam mencapai \textit{high availability}, \textit{scalability}, dan \textit{zero-downtime deployment}.

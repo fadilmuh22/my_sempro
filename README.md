@@ -48,6 +48,12 @@ make
 Open `main.tex` file and save the file to build the project.
 Or you can run `LaTex Workshop: Build with recipe and choose latexmk` in vscode command.
 
+### Step 4 (alternative 2): Run via neovim vimtex
+
+Open `main.tex` file and save the file to build the project.
+Or you can run `:VimtexCompile` in command.
+
+
 ## Working on with this project
 
 ### Project structure

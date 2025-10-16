@@ -15,7 +15,7 @@ Dalam kelas tersebut, guru dapat melihat data emosi siswa secara real-time.
 
 Penelitian ini berfokus pada perancangan dan implementasi arsitektur infrastruktur yang tangguh untuk aplikasi EMODU di platform Google Cloud Platform (GCP).
 Seiring dengan potensi pertumbuhan pengguna, diperlukan sebuah fondasi infrastruktur yang tidak hanya stabil, tetapi juga mampu beradaptasi secara dinamis.
-Oleh karena itu, penelitian ini akan merancang sebuah arsitektur yang mengedepankan tiga pilar utama: skalabilitas otomatis (\textit{auto-scalability}) untuk menangani lonjakan beban pengguna tanpa intervensi manual, pemulihan dari kegagalan (\textit{failure recovery}) untuk memastikan layanan tetap berjalan meskipun terjadi masalah pada salah satu komponen, dan penerapan tanpa henti (\textit{zero-downtime deployment}) yang memungkinkan pembaruan sistem dilakukan tanpa mengganggu aktivitas pengguna.
+Oleh karena itu, penelitian ini akan merancang sebuah arsitektur yang mengedepankan tiga pilar utama: skalabilitas otomatis (\textit{scalability}) untuk menangani lonjakan beban pengguna tanpa intervensi manual, pemulihan dari kegagalan (\textit{failure recovery}) untuk memastikan layanan tetap berjalan meskipun terjadi masalah pada salah satu komponen, dan penerapan tanpa henti (\textit{zero-downtime deployment}) yang memungkinkan pembaruan sistem dilakukan tanpa mengganggu aktivitas pengguna.
 Dengan menerapkan prinsip-prinsip ini, penelitian bertujuan untuk membangun sebuah sistem yang memiliki ketersediaan tinggi (\textit{high availability}) dan dapat diandalkan untuk mendukung proses belajar mengajar secara berkelanjutan.
 
 Inti dari aplikasi Emodu adalah sebuah ekstensi Google Chrome yang memungkinkan siswa atau peserta meeting untuk join class dan melakukan rekognisi wajah menggunakan library face-api.js yang dijalankan di client.
@@ -32,7 +32,7 @@ Penggunaan socket communication harus dioptimalkan agar dapat menangani lalu lin
   \item
     {Bagaimana merancang arsitektur sistem pada Google Cloud Platform (GCP) untuk aplikasi EMODU yang mendukung \textit{high availability}?}
   \item
-    {Bagaimana strategi implementasi \textit{auto-scalability} agar sistem dapat menangani fluktuasi beban pengguna secara efisien?}
+    {Bagaimana strategi implementasi \textit{scalability} agar sistem dapat menangani fluktuasi beban pengguna secara efisien?}
   \item
     {Bagaimana menerapkan proses \textit{zero-downtime deployment} untuk pembaruan aplikasi EMODU tanpa mengganggu layanan?}
 \end{enumerate}
@@ -44,7 +44,7 @@ Penggunaan socket communication harus dioptimalkan agar dapat menangani lalu lin
   \item
     {Merancang dan membangun arsitektur sistem yang memiliki \textit{high availability} untuk aplikasi EMODU di lingkungan Google Cloud Platform (GCP).}
   \item
-    {Mengimplementasikan mekanisme \textit{auto-scalability} untuk memastikan performa sistem tetap optimal saat terjadi perubahan jumlah pengguna.}
+    {Mengimplementasikan mekanisme \textit{scalability} untuk memastikan performa sistem tetap optimal saat terjadi perubahan jumlah pengguna.}
   \item
     {Menerapkan \textit{pipeline deployment} yang memungkinkan pembaruan sistem secara \textit{zero-downtime}.}
 \end{enumerate}
@@ -60,7 +60,7 @@ berikut:}
   \item
     {Menyediakan model arsitektur dan implementasi praktis yang dapat menjadi acuan bagi pengembangan aplikasi lain dengan kebutuhan serupa di platform \textit{cloud}.}
   \item
-    {Memberikan kontribusi keilmuan di bidang rekayasa infrastruktur dan DevOps mengenai penerapan prinsip \textit{high availability} dan \textit{auto-scalability} pada platform GCP.}
+    {Memberikan kontribusi keilmuan di bidang rekayasa infrastruktur dan DevOps mengenai penerapan prinsip \textit{high availability} dan \textit{scalability} pada platform GCP.}
 \end{enumerate}
 
 \section{Batasan}
